@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    test för selenium.com
 Library    SeleniumLibrary
+Suite Setup    Open Browser    ${url}    ${browser}
 
 *** Variables ***
 ${url}    https://automationplayground.com/crm/
@@ -37,8 +38,7 @@ User should be logged in
     Wait Until Page Contains Element    //a[@id='new-customer']
     
 User has logged in
-    Open Browser    browser=chrome
-    Go To    ${url}
+    [Setup]    
     Click Link    //a[@id='SignIn']
     Input Text    //input[@id='email-id']    ${username}
     Input Password    //input[@id='password']    ${password}
