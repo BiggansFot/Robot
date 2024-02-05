@@ -13,19 +13,12 @@ ${password}    password
 ${browser}    Chrome
 
 *** Test Cases ***
-Login with valid information
-    Given User is on page
-    When User logs in with username and password
-    Then User should be logged in
-    
 Create new costumer
     Given User has logged in
     When User creates new customer
     Then Customer information is added
 
 *** Keywords ***
-
-    
 User has logged in
     [Setup]    
     Click Link    //a[@id='SignIn']
